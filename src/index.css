@@ -23,13 +23,16 @@ body {
   outline: none;
 }
 
-.square:focus {
-  background: #ddd;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
 }
 
 .game {
   display: flex;
-  height: 100vh;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -39,11 +42,22 @@ body {
   margin-left: 20px;
 }
 
+.status {
+  margin-bottom: 25px;
+  font-size: 30px;
+}
+
 @media only screen and (max-width: 600px) {
+  .container {
+    margin-top: 25px;
+  }
   .game {
     flex-direction: column;
   }
   .game-info {
     margin-top: 20px;
+  }
+  .status {
+    font-size: 20px;
   }
 }

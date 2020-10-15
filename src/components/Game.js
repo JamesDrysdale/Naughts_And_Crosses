@@ -59,7 +59,7 @@ const Game = () => {
   const moves = history.map((step, move) => {
     const desc = move ? "Go to move #" + move : "Go to game start";
     return (
-      <li key={move}>
+      <li key={move} style={{ marginBottom: "6px" }}>
         <button onClick={() => jumpTo(move)}>{desc}</button>
       </li>
     );
@@ -73,16 +73,18 @@ const Game = () => {
   }
 
   return (
-    <div className="game">
-      <div className="game-board">
-        <Board
-          squares={history[stepNumber].squares}
-          onClick={(i) => handleClick(i)}
-        />
-      </div>
-      <div className="game-info">
-        <div>{status}</div>
-        <ol>{moves}</ol>
+    <div className="container">
+      <div className="status">{status}</div>
+      <div className="game">
+        <div className="game-board">
+          <Board
+            squares={history[stepNumber].squares}
+            onClick={(i) => handleClick(i)}
+          />
+        </div>
+        <div className="game-info">
+          <ol>{moves}</ol>
+        </div>
       </div>
     </div>
   );
